@@ -5,9 +5,13 @@ import { createStore, applyMiddleware } from 'redux';
 import { Router, Route, browserHistory } from 'react-router';
 import ReduxPromise from 'redux-promise';
 
-import App from './components/app';
+import App from './containers/app';
 import reducers from './reducers';
 import routes from './routes';
+
+// for bundling you styles
+import './media/react-selectize.scss';
+import './media/react-datepicker.scss';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
