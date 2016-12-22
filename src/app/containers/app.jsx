@@ -20,9 +20,11 @@ const Container = styled.div`
 
 	&:before {
 		display: table;
-    content: " ";
+    content: "";
 	}
 	&:after {
+		content: "";
+		display: table;
 		clear: both;
 	}
 `;
@@ -33,6 +35,8 @@ const NavHeader = styled.div`
     content: " ";
 	}
 	&:after {
+		content: "";
+		display: table;
 		clear: both;
 	}
 `;
@@ -58,6 +62,8 @@ const ListItem = styled.ul`
     content: " ";
 	}
 	&:after {
+		content: "";
+		display: table;
 		clear: both;
 	}
 `;
@@ -72,6 +78,8 @@ const Items = styled.li`
     content: " ";
 	}
 	&:after {
+		content: "";
+		display: table;
 		clear: both;
 	}
 `;
@@ -83,6 +91,7 @@ const StyledLink = styled(Link)`
 	padding-top: 15px;
 	padding-bottom: 15px;
 	font-family: Helvetica, Arial, sans-serif;
+	text-decoration: none;
 
   &:hover {
     color: #ffffff;
@@ -105,16 +114,16 @@ class App extends Component {
 						<Navigation>
 							<ListItem>
 								<Items>
-									<StyledLink>Form</StyledLink>
+									<StyledLink to='form'>Form</StyledLink>
 								</Items>
 							</ListItem>
 						</Navigation>
 					</Container>
-
-					<Container>
-						{this.props.children}
-					</Container>
 				</Header>
+
+				<Container>
+					{this.props.children}
+				</Container>
 			</div>
     );
   }
